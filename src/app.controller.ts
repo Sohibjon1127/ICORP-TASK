@@ -11,7 +11,7 @@ export class AppController {
   @Get('start')
   async getCode1() {
     const code1 = await axios.post(dotenvConfig.TASK_URL, {
-      msg: 'The task you assigned has been completed ✅',
+      msg: `The first code has been received. Press to proceed to the next step 👇\nhttp://${dotenvConfig.API_URL}:${dotenvConfig.PORT}/finish`,
       url: dotenvConfig.API_URL + `:${dotenvConfig.PORT}` + '/get_code_2',
     });
 

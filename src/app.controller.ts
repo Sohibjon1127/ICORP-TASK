@@ -10,6 +10,7 @@ export class AppController {
 
   @Get('start')
   async getCode1() {
+    console.log(`${dotenvConfig.API_URL + '/get_code_2'}`);
     const code1 = await axios.post(dotenvConfig.TASK_URL, {
       msg: 'The task you assigned has been completed ✅',
       url: dotenvConfig.API_URL + '/get_code_2',

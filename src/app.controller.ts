@@ -10,10 +10,9 @@ export class AppController {
 
   @Get('start')
   async getCode1() {
-    console.log(`${dotenvConfig.API_URL + '/get_code_2'}`);
     const code1 = await axios.post(dotenvConfig.TASK_URL, {
       msg: 'The task you assigned has been completed ✅',
-      url: dotenvConfig.API_URL + '/get_code_2',
+      url: dotenvConfig.API_URL + `:${dotenvConfig.PORT}` + '/get_code_2',
     });
 
     this.code1 = code1.data.part1;
@@ -29,9 +28,6 @@ export class AppController {
 
   @Get('finish')
   async finishMassage() {
-    console.log(
-      `Code1: ${this.code1}\nCode2: ${this.code2}\nFullCode: ${this.fullCode}`,
-    );
     const finishRespose = await axios.get(
       dotenvConfig.TASK_URL + `?code=${this.fullCode}`,
     );

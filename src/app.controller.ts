@@ -11,13 +11,13 @@ export class AppController {
   @Get('start')
   async getCode1() {
     const code1 = await axios.post(dotenvConfig.TASK_URL, {
-      msg: `The first code has been received. Press to proceed to the next step 👇\nhttp://${dotenvConfig.API_URL}:${dotenvConfig.PORT}/finish`,
+      msg: 'The task you assigned has been completed ✅',
       url: dotenvConfig.API_URL + `:${dotenvConfig.PORT}` + '/get_code_2',
     });
 
     this.code1 = code1.data.part1;
     this.fullCode = this.code1 + this.code2;
-    return 'Code 1 received ✅';
+    return `The first code has been received. Press to proceed to the next step 👇\nhttp://${dotenvConfig.API_URL}:${dotenvConfig.PORT}/finish`;
   }
 
   @Post('get_code_2')

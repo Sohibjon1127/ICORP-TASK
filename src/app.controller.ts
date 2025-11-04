@@ -28,6 +28,9 @@ export class AppController {
 
   @Get('finish')
   async finishMassage() {
+    console.log(
+      `Code1: ${this.code1}\nCode2: ${this.code2}\nFullCode: ${this.fullCode}`,
+    );
     const finishRespose = await axios.get(
       dotenvConfig.TASK_URL + `?code=${this.fullCode}`,
     );

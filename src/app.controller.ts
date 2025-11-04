@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import axios from 'axios';
-import { Config } from './config';
+import { dotenvConfig } from './config';
 
 @Controller()
 export class AppController {
@@ -10,9 +10,9 @@ export class AppController {
 
   @Get('start')
   async getCode1() {
-    const code1 = await axios.post(Config.TASK_URL, {
+    const code1 = await axios.post(dotenvConfig.TASK_URL, {
       msg: 'The task you assigned has been completed ✅',
-      url: Config.API_URL + '/get_code_2',
+      url: dotenvConfig.API_URL + '/get_code_2',
     });
 
     this.code1 = code1.data.part1;
@@ -29,7 +29,7 @@ export class AppController {
   @Get('finish')
   async finishMassage() {
     const finishRespose = await axios.get(
-      Config.TASK_URL + `?code=${this.fullCode}`,
+      dotenvConfig.TASK_URL + `?code=${this.fullCode}`,
     );
 
     return {

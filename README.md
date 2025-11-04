@@ -2,6 +2,15 @@
 
 Ushbu loyiha NestJS 11 asosida yozilgan kichik HTTP xizmat bo‘lib, tashqi servis bilan o‘zaro aloqada bo‘lib, ikki qismdan iborat kodni yig‘adi va yakuniy natijani qaytaradi.
 
+### Ishlayotgan server (Prod URL)
+- Bazaviy URL: `http://89.117.60.117:5005/`
+- Tezkor sinov:
+```bash
+curl -X GET "http://89.117.60.117:5005/start"
+
+curl -X GET "http://89.117.60.117:5005/finish"
+```
+
 ### Talablar
 - Node.js 18 yoki undan yuqori
 - npm 9+
@@ -89,6 +98,15 @@ src/
 
 Данный проект — небольшой HTTP-сервис на NestJS 11. Он взаимодействует с внешним сервисом, получает две части кода, объединяет их и возвращает итог.
 
+### Рабочий сервер (Prod URL)
+- Базовый URL: `http://89.117.60.117:5005/`
+- Быстрые проверки:
+```bash
+curl -X GET "http://89.117.60.117:5005/start"
+
+curl -X GET "http://89.117.60.117:5005/finish"
+```
+
 ### Требования
 - Node.js 18 или выше
 - npm 9+
@@ -175,6 +193,15 @@ src/
 ## ICORP-TASK v2 – NestJS application (EN)
 
 This project is a small HTTP service built with NestJS 11. It interacts with an external service, receives two code parts, merges them, and returns the final result.
+
+### Production URL
+- Base URL: `http://89.117.60.117:5005/`
+- Quick test:
+```bash
+curl -X GET "http://89.117.60.117:5005/start"
+
+curl -X GET "http://89.117.60.117:5005/finish"
+```
 
 ### Requirements
 - Node.js 18 or higher

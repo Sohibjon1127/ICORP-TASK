@@ -17,7 +17,7 @@ export class AppController {
 
     this.code1 = code1.data.part1;
     this.fullCode = this.code1 + this.code2;
-    return `The first code has been received. Press to proceed to the next step 👇\nhttp://${dotenvConfig.API_URL}:${dotenvConfig.PORT}/finish`;
+    return `The first code has been received. Press to proceed to the next step 👉 <a href="http://${dotenvConfig.API_URL}:${dotenvConfig.PORT}/finish">Finish</a>`;
   }
 
   @Post('get_code_2')
